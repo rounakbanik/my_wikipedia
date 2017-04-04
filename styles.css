@@ -1,3 +1,4 @@
+/* GENERAL STYLES */
 * {
   font-family: 'Montserrat', sans-serif;
 }
@@ -6,14 +7,20 @@ body {
   margin: 0px;
 }
 
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+
 /* MEDIA QUERIES */
-@media only screen and (max-device-width: 640px) {
+@media only screen and (max-width: 640px) {
   header .hamburger {
     display: inline !important;
   }
 
   aside {
-    flex: 0 0 0px !important;
+    display: none;
     position: fixed;
     z-index: 2;
     top: 100px;
@@ -23,12 +30,13 @@ body {
   }
 
   .aside-hidden {
+    display: block;
     width: 230px !important;
     transition-duration: 0.5s;
   }
 }
 
-/* MAIN STYLE QUERIES */
+/* HEADER STYLES */
 header {
   text-align: center;
   background-color: #112C3B;
@@ -50,19 +58,53 @@ header .hamburger {
   display: none;
 }
 
-
-.flex-container {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: stretch;
-}
-
+/* ASIDE NAVBAR STYLES */
 aside {
   flex: 0 0 230px;
   background-color: #EDEDED;
   min-height: 88vh;
+  padding: 0px 20px;
 }
 
+aside form {
+  margin-top: 85px;
+  text-align: center;
+}
+
+aside form input, aside form select {
+  width: 90%;
+  height: 24px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 5px;
+  background-color: white;
+}
+
+aside form button {
+  padding: 10px;
+  background-color: #112C3B;
+  border: 0;
+  border-radius: 3px;
+  color: white;
+  width: 100px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+aside form button:hover {
+  background-color: orange;
+  transition-duration: 0.3s;
+}
+
+/* ARTICLE STYLES */
 article {
   padding: 25px;
+}
+
+.article-text {
+  margin: 30px;
+  margin-top: 80px;
+  font-size: 18px;
+  line-height: 1.5em;
 }
