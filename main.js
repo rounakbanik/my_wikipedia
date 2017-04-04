@@ -22,6 +22,7 @@ $(document).ready(function(){
         //If the user has left the title blank, inform and return
         if (article == '') {
             $('.article-text').html("You haven't entered a search term! Please do so and try again.");
+            $('.header-title').html("My Wikipedia");
             return;
         }
 
@@ -32,10 +33,12 @@ $(document).ready(function(){
         //Issue the GET Request. If page not found, let the user know
         $.get( request_url, function( data ) {
             $('.article-text').html(data['extract']);
+            $('.header-title').html(data['title']);
             //Hide the menu if in mobile view
             $("#sidebar").removeClass("aside-hidden");
         }).fail(function() {
             $('.article-text').html("Oops! Looks like the page you've searched for doesn't exist.");
+            $('.header-title').html("My Wikipedia");
         });
 
     });
