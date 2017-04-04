@@ -32,9 +32,11 @@ $(document).ready(function(){
         //Issue the GET Request. If page not found, let the user know
         $.get( request_url, function( data ) {
             $('.article-text').html(data['extract']);
+            //Hide the menu if in mobile view
+            $("#sidebar").removeClass("aside-hidden");
         }).fail(function() {
             $('.article-text').html("Oops! Looks like the page you've searched for doesn't exist.");
         });
-        
+
     });
 });
